@@ -6,6 +6,8 @@
 //  Last edited by Gil Dekel on 8/30/16.
 //
 
+#define  _CRT_SECURE_NO_WARNINGS
+
 #ifndef NEURALNET_HPP_
 #define NEURALNET_HPP_
 

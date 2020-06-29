@@ -7,6 +7,7 @@
 //  Created by Gil Dekel on 8/19/16.
 //  Last edited by Gil Dekel on 9/4/16.
 //
+#define  _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
 #include <fstream>
@@ -16,6 +17,7 @@
 #include <cstdlib>
 #include <string>
 #include <cmath>
+#include <chrono>
 
 #include "Matrix.hpp"
 #include "NeuralNet.hpp"

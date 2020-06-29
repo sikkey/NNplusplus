@@ -5,7 +5,7 @@
 //  Created by Gil Dekel on 8/21/16.
 //  Last edited by Gil Dekel on 9/4/16.
 //
-
+#pragma warning(disable:4996)
 #include <iostream>
 #include <fstream>
 #include <cstdlib>      //std::rand, std::srand
@@ -13,7 +13,7 @@
 #include <sstream>
 #include <string>
 #include <cmath>
-
+#include <chrono>
 
 #include "NeuralNet.hpp"
 #include "Matrix.hpp"
@@ -56,7 +56,9 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < shuffledIdxs.size(); ++i) {
         shuffledIdxs[i] = i;
     }
-    std::random_shuffle(shuffledIdxs.begin(), shuffledIdxs.end(), myrandom);
+
+    //std::random_shuffle(shuffledIdxs.begin(), shuffledIdxs.end(), myrandom);
+	std::_Random_shuffle1(shuffledIdxs.begin(), shuffledIdxs.end(), myrandom);
 
     size_t cvClusters = shuffledIdxs.size()/CV_k;
     
@@ -197,7 +199,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "TESTING ENDED!\n";
     
 //    NNs[idxOfBestNN]->saveNetwork();
-    
+	system("pause");
     return 0;
 }
 
