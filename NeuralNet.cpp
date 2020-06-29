@@ -5,8 +5,11 @@
 //  Created by Gil Dekel on 8/19/16.
 //  Last edited by Gil Dekel on 8/30/16.
 //
+#define  _CRT_SECURE_NO_WARNINGS
 
 #include <fstream>
+#include<string.h>
+#include <string>
 
 #include "NeuralNet.hpp"
 
@@ -226,6 +229,5 @@ std::string NeuralNet::getCurrTime() const {
     currTime += "--" + ((now->tm_hour < 10) ? "0" + std::to_string(now->tm_hour) : std::to_string(now->tm_hour));
     currTime += "-" + ((now->tm_min < 10) ? "0" + std::to_string(now->tm_min) : std::to_string(now->tm_min));
     currTime += "-" + ((now->tm_sec < 10) ? "0" + std::to_string(now->tm_sec) : std::to_string(now->tm_sec));
-    
     return currTime;
 }
