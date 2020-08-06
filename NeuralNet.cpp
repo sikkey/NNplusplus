@@ -172,10 +172,17 @@ void NeuralNet::trainingCycle(const Matrix &inputList, const Matrix &targetOutpu
 void NeuralNet::saveNetwork(const std::string &name) const {
     std::string fileName;
     
-    if (name.empty())
-        fileName = (getCurrTime() + ".nn");
-    else
-        fileName = (name + ".nn");
+	if (name.empty()) {
+		fileName = (getCurrTime() + ".nn");
+	}
+	else {
+		if (name.length() > 3 && name.substr(name.length() - 3).compare(".nn") != 0) {
+			fileName = (name + ".nn");
+		}
+		else {
+			fileName = name;
+		}
+	}
     
     std::ofstream out(fileName);
     if (out.fail()) {
